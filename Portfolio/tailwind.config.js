@@ -11,6 +11,11 @@ export default {
       },
       animation: {
         wave: 'wave-animation 1.5s ease-in-out infinite',
+        blob: 'blob 7s infinite',
+        'border-shine': 'border-shine 2s linear infinite',
+        'background-shine': 'background-shine 2s linear infinite',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        tilt: 'tilt 10s infinite linear',
       },
       keyframes: {
         'wave-animation': {
@@ -23,6 +28,48 @@ export default {
           '60%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(0deg)' },
         },
+        
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.9)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
+        'border-shine': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'background-shine': {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        tilt: {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(1deg)',
+          },
+          '75%': {
+            transform: 'rotate(-1deg)',
+          },
+        },
+      },
+      backgroundSize: {
+        'shine': '200% 100%',
+      },
+      transitionDelay: {
+        '0': '0ms',
+        '2000': '2000ms',
+        '4000': '4000ms',
       },
     },
   },
