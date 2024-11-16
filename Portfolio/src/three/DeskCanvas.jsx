@@ -6,21 +6,7 @@ import Desk from '../three/Desk'
 const RotatingDesk = () => {
   const deskRef = useRef()
   const [direction, setDirection] = useState(1) 
-
-  useFrame(() => {
-    if (deskRef.current) {
-      const maxRotation = Math.PI * (45 / 180)
-
-      deskRef.current.rotation.y += direction * 0.001
-
-      if (deskRef.current.rotation.y >= maxRotation) {
-        setDirection(-1)  
-      } else if (deskRef.current.rotation.y <= -maxRotation) {
-        setDirection(1)  
-      }
-    }
-  })
-
+  
   return (
     <group ref={deskRef}>
       <Desk />
@@ -30,17 +16,18 @@ const RotatingDesk = () => {
 
 const DeskCanvas = () => {
   return (
-    <div className="h-[50vh] pt-14 w-[100%]">
+    <div className="h-[70vh] w-[100%] " >
       <Canvas>
         <Suspense fallback={null}>
-          {/* Camera */}
-          <PerspectiveCamera makeDefault position={[1, 1, 11]} />
+          <PerspectiveCamera makeDefault position={[0, 10, 0]} fov={55} />
           <OrbitControls 
-            enableZoom={true}
+            enableZoom={false}
             enablePan={false}
             enableRotate={true}
-            minDistance={2}
+            minDistance={4}
             maxDistance={9}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
           />
           
           {/* Lights */}
