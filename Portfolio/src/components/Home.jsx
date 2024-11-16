@@ -1,8 +1,5 @@
 import React from 'react'
 import DeskCanvas from '../three/DeskCanvas'
-import LinkedinCanvas from '../three/LinkedinCanvas'
-import WhatsappCanvas from '../three/WhatsappCanvas'
-import InstaCanvas from '../three/InstaCanvas'
 import { Code2, Palette, Box, Brain, Rocket } from 'lucide-react';
 import { ExternalLink, Code, Laptop, Github } from 'lucide-react';
 import { useState } from 'react'
@@ -189,7 +186,7 @@ const Home = () => {
     {
       title: "School Website",
       description: "Modern educational platform with interactive UI/UX",
-      link: "https://school-website-sepia-theta.vercel.app/",
+      link: "https://school-website-cq29.vercel.app/",
       icon: <Laptop className="w-6 h-6" />,
       tags: [ "Tailwind","UI/UX", "React"],
       color: "from-blue-600 to-cyan-400"
@@ -206,26 +203,28 @@ const Home = () => {
   return (
     <>
     <section className="p-8 align-center justify-center items-center sm:p-10">
-  <div className="pt-16 sm:pt-[70px]">
-    <div className="text-center">
-      <h5 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold items-center gap-2">
-        Hi, I'm Stephen Mwaniki <span className="text-3xl md:text-4xl lg:text-5xl animate-wave">👋</span>
-      </h5>
-      <p className="pt-4 text-lg sm:text-2xl md:text-3xl text-gray-400 font-semibold">
-        Building products & brands
-      </p>
-    </div>
+    <div className="pt-16 sm:pt-[70px] overflow-hidden">
+  <div className="text-center">
+    <h5 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold items-center gap-2 animate-fade-in-up group">
+      <span className="transition-all duration-300 hover:text-blue-500">Hi, I'm</span>{" "}
+      <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text bg-300% animate-gradient hover:animate-none hover:bg-blue-500">
+        Stephen Mwaniki
+      </span>{" "}
+      <span className="text-3xl md:text-4xl lg:text-5xl inline-block animate-wave cursor-pointer hover:scale-125 transition-transform duration-300">
+        👋
+      </span>
+    </h5>
+    <p className="pt-4 text-lg sm:text-2xl md:text-3xl text-gray-400 font-semibold opacity-0 animate-fade-in-slide group">
+      <span className="inline-block hover:text-blue-500 transition-colors duration-300 animate-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+        Aspiring Full-Stack Developer
+      </span>{" "}
+      <span className="inline-block text-gray-500">|</span>{" "}
+      <span className="inline-block animate-slide-in-right hover:text-blue-500 transition-colors duration-300">
+        Specializing in Front-End Development
+      </span>
+    </p>
   </div>
-  
-  <div className="flex justify-between items-center mt-8">
-    <div className="m-4 w-[10%] sm:w-[8%] h-[8vh] sm:h-[10vh] flex justify-center">
-      <LinkedinCanvas />
-    </div>
-    <div className="m-4 w-[10%] sm:w-[8%] h-[8vh] sm:h-[10vh] flex justify-center">
-      <WhatsappCanvas />
-    </div>
-  </div>
-  
+</div>
   
   <div className="flex justify-center items-center pt-10">
     <div className="w-full sm:w-[80%] h-[50vh] sm:h-[70vh]">
@@ -233,11 +232,6 @@ const Home = () => {
     </div>
   </div>
   
-  <div className="flex justify-between items-center mt-8">
-    <div className="m-4 w-[10%] sm:w-[8%] h-[8vh] sm:h-[10vh] flex justify-center">
-      <InstaCanvas />
-    </div>
-  </div>
 </section>
 
 
@@ -296,13 +290,13 @@ const Home = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative overflow-hidden rounded-xl bg-zinc-800/30 backdrop-blur-sm p-8 transition-all duration-500 hover:bg-zinc-800/50">
-                {/* Gradient border animation */}
+
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-[2px]">
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-border-shine" />
                 </div>
 
                 <div className="relative">
-                  {/* Content */}
+
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
                       <div className={`rounded-xl bg-gradient-to-r ${project.color} p-4 shadow-lg transform transition-transform duration-300 group-hover:scale-110`}>
@@ -320,7 +314,6 @@ const Home = () => {
                     <ExternalLink className="text-zinc-400 group-hover:text-purple-400 transition-all duration-300 transform group-hover:rotate-12" />
                   </div>
 
-                  {/* Tags */}                  {/* Tags */}
 
                   <div className="flex gap-2 flex-wrap">
                     {project.tags.map((tag, tagIndex) => (

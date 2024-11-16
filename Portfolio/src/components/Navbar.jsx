@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Import icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Function to open the CV link
+  const openCV = () => {
+    window.open('https://stephen-curriculum-vitae.tiiny.site', '_blank');
+  };
+  const openGithub = () => {
+    window.open('https://github.com/keelann95', '_blank');
+  };
+  const openLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/stephen-mwaniki-dev', '_blank');
+  };
 
   return (
     <main className="p-5 shadow-lg shadow-gray-800 text-gray-300">
@@ -17,15 +29,25 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex">
-          <ul className="flex gap-6">
-            {["Home", "About", "Work", "Contacts"].map((item) => (
-              <li
-                key={item}
-                className="hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-black to-gray-300 bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px] cursor-pointer transition-all duration-500 ease-out"
-              >
-                {item}
-              </li>
-            ))}
+          <ul className="flex gap-6 items-center">
+            <li
+              onClick={openGithub}
+              className="flex items-center gap-2 cursor-pointer hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-black to-gray-300 bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px]  transition-all duration-500 ease-out"
+            >
+              <FaGithub className="text-lg" /> GitHub
+            </li>
+            <li
+              onClick={openLinkedIn}
+              className="flex items-center gap-2 cursor-pointer hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-black to-gray-300 bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px]  transition-all duration-500 ease-out"
+            >
+              <FaLinkedin className="text-lg" /> LinkedIn
+            </li>
+            <li
+              onClick={openCV}
+              className="hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-black to-gray-300 bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px] cursor-pointer transition-all duration-500 ease-out"
+            >
+              Curriculum Vitae
+            </li>
           </ul>
         </div>
 
@@ -57,14 +79,24 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden mt-4">
           <ul className="flex flex-col gap-4">
-            {["Home", "About", "Work", "Contacts"].map((item) => (
-              <li
-                key={item}
-                className="hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-black to-gray-300 bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px] cursor-pointer transition-all duration-500 ease-out"
-              >
-                {item}
-              </li>
-            ))}
+            <li
+              onClick={openGithub}
+              className="flex items-center gap-2 cursor-pointer hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-gray-300 to-black bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px]  transition-all duration-500 ease-out"
+            >
+              <FaGithub className="text-lg" /> GitHub
+            </li>
+            <li
+              onClick={openLinkedIn}
+              className="flex items-center gap-2 cursor-pointer hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-gray-300 to-black bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px]  transition-all duration-500 ease-out"
+            >
+              <FaLinkedin className="text-lg" /> LinkedIn
+            </li>
+            <li
+              onClick={openCV}
+              className="hover:font-semibold hover:text-white bg-left-bottom bg-gradient-to-r from-gray-300 to-black bg-[length:0%_8px] bg-no-repeat hover:bg-[length:100%_2px] cursor-pointer transition-all duration-500 ease-out"
+            >
+              Curriculum Vitae
+            </li>
           </ul>
         </div>
       )}
