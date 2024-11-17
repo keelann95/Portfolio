@@ -87,7 +87,7 @@ export const ContactUs = () => {
                 <label htmlFor="user_email" className="text-white text-sm">Email Address</label>
                 <input
                   id="user_email"
-                  name="user_email"
+                  name="from_email"
                   type="email"
                   placeholder="Enter your email"
                   className="w-full p-3 mt-2 bg-gray-800 text-white rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
