@@ -214,7 +214,7 @@ const Home = () => {
         👋
       </span>
     </h5>
-    <p className="pt-4 text-lg sm:text-2xl md:text-3xl text-gray-400 font-semibold opacity-0 animate-fade-in-slide group">
+    <p className="  pt-16 text-lg sm:text-2xl md:text-3xl text-gray-400 font-semibold opacity-60 animate-fade-in-slide group">
       <span className="inline-block hover:text-blue-500 transition-colors duration-300 animate-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
         Aspiring Full-Stack Developer
       </span>{" "}

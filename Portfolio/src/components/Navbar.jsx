@@ -6,7 +6,7 @@ const Navbar = () => {
 
   // Function to open the CV link
   const openCV = () => {
-    window.open('https://stephen-curriculum-vitae.tiiny.site', '_blank');
+    window.open('https://mwaniki-curriculum-vitae.tiiny.site', '_blank');
   };
   const openGithub = () => {
     window.open('https://github.com/keelann95', '_blank');
