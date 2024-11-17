@@ -5,7 +5,6 @@ import Desk from '../three/Desk'
 
 const RotatingDesk = () => {
   const deskRef = useRef()
-  const [direction, setDirection] = useState(1) 
   
   return (
     <group ref={deskRef}>
