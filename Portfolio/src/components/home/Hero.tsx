@@ -27,9 +27,11 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
 
   const roles = [
     "Frontend Engineer",
+    "Next.js Specialist",
+    "React Specialist",
+    "TypeScript Specialist",
     "UI Performance Expert",
     "Accessibility Advocate",
-    "React Specialist",
   ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
