@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onCursorHover }) => {
           onMouseLeave={() => onCursorHover(false)}
         >
           <span className="mr-1 text-primary-500">{"<"}</span>
-          <span>JD</span>
+          <span>SM</span>
           <span className="ml-1 text-primary-500">{"/>"}</span>
         </Link>
 
@@ -127,30 +127,7 @@ const Header: React.FC<HeaderProps> = ({ onCursorHover }) => {
             )}
           </NavLink>
 
-          <NavLink
-            to="/blog"
-            className={({ isActive }) =>
-              `transition-all duration-200 py-1 relative ${
-                isActive
-                  ? "text-primary-500"
-                  : "text-neutral-700 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400"
-              }`
-            }
-            onMouseEnter={() => onCursorHover(true)}
-            onMouseLeave={() => onCursorHover(false)}
-          >
-            {({ isActive }) => (
-              <>
-                Blog
-                {isActive && (
-                  <motion.div
-                    className="absolute -bottom-1 left-0 h-0.5 bg-primary-500 w-full"
-                    layoutId="navIndicator"
-                  />
-                )}
-              </>
-            )}
-          </NavLink>
+      
 
           <NavLink
             to="/contact"
@@ -270,18 +247,7 @@ const Header: React.FC<HeaderProps> = ({ onCursorHover }) => {
             Projects
           </NavLink>
 
-          <NavLink
-            to="/blog"
-            className={({ isActive }) =>
-              `py-2 px-4 rounded transition-colors ${
-                isActive
-                  ? "bg-primary-50 dark:bg-primary-900/20 text-primary-500"
-                  : "text-neutral-700 dark:text-neutral-300"
-              }`
-            }
-          >
-            Blog
-          </NavLink>
+         
 
           <NavLink
             to="/contact"

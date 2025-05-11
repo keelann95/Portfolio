@@ -4,7 +4,6 @@ import SkillBar from "../components/common/SkillBar";
 import Button from "../components/common/Button";
 import { motion } from "framer-motion";
 import { Download, Github, ExternalLink } from "lucide-react";
-import CodeBlock from "../components/common/CodeBlock";
 
 const About: React.FC = () => {
   const workHistory = [

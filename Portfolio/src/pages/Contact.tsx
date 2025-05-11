@@ -9,7 +9,6 @@ import {
   Send,
   Linkedin,
   Github,
-  Twitter,
 } from "lucide-react";
 
 const Contact: React.FC = () => {
@@ -22,6 +21,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -35,13 +35,31 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Replace with your Formspree form ID or API endpoint
+      const response = await fetch("https://formspree.io/f/xrbqaegj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong. Please try again later.");
+      }
+
+      // Success
       setSubmitted(true);
       setFormData({
         name: "",
@@ -49,7 +67,11 @@ const Contact: React.FC = () => {
         subject: "",
         message: "",
       });
-    }, 1500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unknown error occurred");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,7 +125,13 @@ const Contact: React.FC = () => {
                   Send Me a Message
                 </h2>
 
-                <form onSubmit={handleSubmit}>
+                {error && (
+                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg">
+                    {error}
+                  </div>
+                )}
+
+                <form onSubmit={sendMessage}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label
@@ -218,10 +246,10 @@ const Contact: React.FC = () => {
                     </h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
                       <a
-                        href="005.stephenmwaniki@gmail.com"
+                        href="mailto:005.stephenmwaniki@gmail.com"
                         className="hover:text-primary-500 dark:hover:text-primary-400"
                       >
-                       005.stephenmwaniki@gmail.com
+                        005.stephenmwaniki@gmail.com
                       </a>
                     </p>
                   </div>
@@ -255,7 +283,8 @@ const Contact: React.FC = () => {
                       Location
                     </h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
-                      Nairobi, Kenya                    </p>
+                      Nairobi, Kenya{" "}
+                    </p>
                   </div>
                 </div>
               </div>

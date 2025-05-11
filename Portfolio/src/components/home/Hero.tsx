@@ -5,10 +5,19 @@ import Button from "../common/Button";
 interface HeroProps {
   onCursorHover?: (hovering: boolean) => void;
 }
+type ButtonProps = {
+  to?: string;
+  variant?: "primary" | "outline";
+  size?: "sm" | "md" | "lg";
+  icon?: React.ReactNode;
+  iconPosition?: "left" | "right";
+  className?: string;
+  children: React.ReactNode;
+} & React.HTMLAttributes<HTMLButtonElement>; // ✅ Enables onMouseEnter, onClick, etc.
 
 const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  
+
   const handleScrollClick = () => {
     if (scrollRef.current) {
       const offsetTop = scrollRef.current.offsetTop;
@@ -30,22 +39,22 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const role = roles[currentRoleIndex];
-      
+
       if (!isDeleting) {
         // Typing
         setCurrentText(role.substring(0, currentText.length + 1));
         setTypingSpeed(100);
-        
+
         // If we completed typing the current role
         if (currentText === role) {
           setTypingSpeed(2000); // Pause before deleting
           setIsDeleting(true);
         }
       } else {
-        // Deleting 
+        // Deleting
         setCurrentText(role.substring(0, currentText.length - 1));
         setTypingSpeed(50);
-        
+
         // If  deleted everything, move to next role
         if (currentText === "") {
           setIsDeleting(false);
@@ -53,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
         }
       }
     }, typingSpeed);
-    
+
     return () => clearTimeout(timeout);
   }, [currentText, currentRoleIndex, isDeleting, typingSpeed, roles]);
 
@@ -62,22 +71,21 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 z-0" />
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl" />
-      
 
       <div
         className="z-10 container mx-auto"
         style={{
           opacity: 0,
           transform: "translateY(30px)",
-          animation: "fadeInUp 0.8s ease-out forwards"
+          animation: "fadeInUp 0.8s ease-out forwards",
         }}
       >
         <p className="text-primary-500 font-medium mb-4">Hi, my name is</p>
-        
+
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-4">
           Stephen M. <span className="text-primary-500">Mwaniki</span>
         </h1>
-        
+
         <div className="h-12 md:h-16">
           <h2 className="text-2xl md:text-4xl font-bold text-neutral-700 dark:text-neutral-300">
             I'm a{" "}
@@ -87,14 +95,14 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
             <span className="animate-pulse">|</span>
           </h2>
         </div>
-        
+
         <p className="mt-6 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400 text-lg md:text-xl leading-relaxed">
-          I specialize in creating exceptional digital experiences with a focus on performance, 
-          accessibility, and clean code. With 8+ years of experience, I deliver modern, 
-          polished frontend solutions.
+          I specialize in creating exceptional digital experiences with a focus
+          on performance, accessibility, and clean code. With 2+ years of
+          experience, I deliver modern, polished frontend solutions.
         </p>
-        
-        <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+
+        <div className="mt-10 onMouseEnter={() => onCursorHover?.(true)} onMouseLeave={() => onCursorHover?.(false)} flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Button
             to="/projects"
             variant="primary"
@@ -102,23 +110,20 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
             icon={<ArrowRight size={18} />}
             iconPosition="right"
             className="shadow-lg hover:scale-105 transition-transform duration-300"
-            onMouseEnter={() => onCursorHover?.(true)}
-            onMouseLeave={() => onCursorHover?.(false)}
+           
           >
             View My Work
           </Button>
-          
+
           <Button
             to="/contact"
             variant="outline"
             size="lg"
-            onMouseEnter={() => onCursorHover?.(true)}
-            onMouseLeave={() => onCursorHover?.(false)}
           >
             Contact Me
           </Button>
         </div>
-        
+
         {/* Social links */}
         <div className="mt-12 flex space-x-6 justify-center">
           <a
@@ -132,7 +137,7 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
           >
             <Github size={24} />
           </a>
-          
+
           <a
             href="https://www.linkedin.com/in/stephen-mwaniki-dev"
             target="_blank"
@@ -146,12 +151,12 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
           </a>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
         style={{
-          animation: "bounce 2s infinite ease-in-out"
+          animation: "bounce 2s infinite ease-in-out",
         }}
         onClick={handleScrollClick}
         onMouseEnter={() => onCursorHover?.(true)}
@@ -159,12 +164,12 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
       >
         <ChevronDown size={32} className="text-primary-500" />
       </div>
-      
+
       {/* Reference for scroll */}
       <div ref={scrollRef} />
-      
-      {/* CSS animations */}
-      <style jsx>{`
+
+      CSS animations
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -175,9 +180,13 @@ const Hero: React.FC<HeroProps> = ({ onCursorHover }) => {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes bounce {
-          0%, 20%, 50%, 80%, 100% {
+          0%,
+          20%,
+          50%,
+          80%,
+          100% {
             transform: translateY(0) translateX(-50%);
           }
           40% {

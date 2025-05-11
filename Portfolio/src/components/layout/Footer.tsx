@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
               <span className="ml-1">{"/>"}</span>
             </Link>
             <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-              Senior Frontend Engineer specializing in building exceptional
+               Frontend Engineer specializing in building exceptional
               digital experiences with a focus on performance, accessibility,
               and clean code.
             </p>
@@ -67,14 +67,7 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/blog"
-                  className="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
-                  onMouseEnter={() => onCursorHover(true)}
-                  onMouseLeave={() => onCursorHover(false)}
-                >
-                  Blog
-                </Link>
+               
               </li>
               <li>
                 <Link

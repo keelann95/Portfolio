@@ -8,6 +8,13 @@ interface FeaturedProjectsProps {
   onCursorHover?: (hovering: boolean) => void;
 }
 
+type ButtonProps = {
+  to?: string;
+  variant?: "outline" | "default"; // or whatever your variants are
+  children: React.ReactNode;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+};
 const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   onCursorHover,
 }) => {
@@ -29,48 +36,66 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         "OpenAI API",
         "PWA",
       ],
-      metrics:
-        " 100% offline-capable, built with encryption-first mindset",
+      metrics: " 100% offline-capable, built with encryption-first mindset",
       categories: ["frontend", "privacy", "healthcare", "AI"],
       featured: true,
       client: "Personal Project (In Progress)",
       date: "May 2025 – Present",
       duration: "Ongoing",
       role: "Frontend Engineer",
-      liveUrl: "https://your-vercel-url.vercel.app", // replace with actual Vercel URL
-      githubUrl: "https://github.com/yourusername/healthcare-app", // replace with actual repo
+      liveUrl: "https://your-vercel-url.vercel.app",
+      githubUrl: "https://github.com/yourusername/healthcare-app",
     },
     {
-      id: 'filmverse',
-      title: 'FilmVerse',
-      description: 'A dynamic movie forum and discovery platform with secure authentication, protected routes, and interactive user experience.',
-      image: 'https://images.pexels.com/photos/799131/pexels-photo-799131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React', 'Tailwind CSS', 'React Router', 'Flask', 'JWT', 'Fetch API'],
-      metrics: 'Reduced bounce rate by 35% with improved routing and authentication flow',
-      categories: ['fullstack', 'ui/ux', 'authentication'],
+      id: "filmverse",
+      title: "FilmVerse",
+      description:
+        "A dynamic movie forum and discovery platform with secure authentication, protected routes, and interactive user experience.",
+      image:
+        "https://images.pexels.com/photos/799131/pexels-photo-799131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "React Router",
+        "Flask",
+        "JWT",
+        "Fetch API",
+      ],
+      metrics:
+        "Reduced bounce rate by 35% with improved routing and authentication flow",
+      categories: ["fullstack", "ui/ux", "authentication"],
       featured: true,
-      client: 'Personal Project',
-      date: 'Nov 2024 - Dec 2024',
-      duration: '1 month',
-      role: 'Full Stack Developer',
-      liveUrl: 'https://example.com/filmverse',
-      githubUrl: 'https://github.com/yourusername/filmverse'
+      client: "Personal Project",
+      date: "Nov 2024 - Dec 2024",
+      duration: "1 month",
+      role: "Full Stack Developer",
+      liveUrl: "https://example.com/filmverse",
+      githubUrl: "https://github.com/yourusername/filmverse",
     },
     {
-      id: 'white-pearl-tours',
-      title: 'White Pearl Tour & Travel',
-      description: 'An immersive travel booking website tailored for luxury African tourism, featuring AI-driven trip customization and 3D-enhanced user experiences.',
-      image: 'https://images.pexels.com/photos/1114656/pexels-photo-1114656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['React', 'Tailwind CSS', 'Three.js', 'AI Integration', 'Framer Motion', 'Node.js'],
-      metrics: 'Increased client leads by 62%, reduced bounce rate by 38%',
-      categories: ['frontend', 'ux', 'ai-enhanced'],
+      id: "white-pearl-tours",
+      title: "White Pearl Tour & Travel",
+      description:
+        "An immersive travel booking website tailored for luxury African tourism, featuring AI-driven trip customization and 3D-enhanced user experiences.",
+      image:
+        "https://images.pexels.com/photos/1114656/pexels-photo-1114656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Three.js",
+        "AI Integration",
+        "Framer Motion",
+        "Node.js",
+      ],
+      metrics: "Increased client leads by 62%, reduced bounce rate by 38%",
+      categories: ["frontend", "ux", "ai-enhanced"],
       featured: true,
-      client: 'White Pearl Tour & Travel',
-      date: 'April 2025 - present',
-      duration: 'ongoing',
-      role: 'Frontend Developer',
-      liveUrl: 'https://whitepearltours.africa',
-      githubUrl: 'https://github.com/yourusername/white-pearl-tours'
+      client: "White Pearl Tour & Travel",
+      date: "April 2025 - present",
+      duration: "ongoing",
+      role: "Frontend Developer",
+      liveUrl: "https://whitepearltours.africa",
+      githubUrl: "https://github.com/yourusername/white-pearl-tours",
     },
   ];
 
@@ -177,14 +202,14 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         </motion.div>
 
         <div className="mt-16 text-center">
-          <Button
-            to="/projects"
-            variant="outline"
+          <span
             onMouseEnter={() => onCursorHover?.(true)}
             onMouseLeave={() => onCursorHover?.(false)}
           >
-            View All Projects
-          </Button>
+            <Button to="/projects" variant="outline">
+              View All Projects
+            </Button>
+          </span>
         </div>
       </div>
     </section>
