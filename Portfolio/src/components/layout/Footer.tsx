@@ -24,9 +24,9 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
               <span className="ml-1">{"/>"}</span>
             </Link>
             <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-               Frontend Engineer specializing in building exceptional
-              digital experiences with a focus on performance, accessibility,
-              and clean code.
+              Frontend Engineer specializing in building exceptional digital
+              experiences with a focus on performance, accessibility, and clean
+              code.
             </p>
           </div>
 
@@ -66,9 +66,7 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
                   Projects
                 </Link>
               </li>
-              <li>
-               
-              </li>
+              <li></li>
               <li>
                 <Link
                   to="/contact"
@@ -111,7 +109,7 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="005.stephenmwaniki@gmail.com"
+                href="mailto:005.stephenmwaniki@gmail.com"
                 className="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
                 onMouseEnter={() => onCursorHover(true)}
@@ -122,7 +120,7 @@ const Footer: React.FC<FooterProps> = ({ onCursorHover }) => {
             </div>
             <p className="mt-4 text-neutral-600 dark:text-neutral-400">
               <a
-                href="005.stephenmwaniki@gmail.com"
+                href="mailto:005.stephenmwaniki@gmail.com"
                 className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                 onMouseEnter={() => onCursorHover(true)}
                 onMouseLeave={() => onCursorHover(false)}

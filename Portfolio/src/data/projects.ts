@@ -131,7 +131,7 @@ export const projects = [
     description:
       "An immersive travel booking website tailored for luxury African tourism, featuring AI-driven trip customization and 3D-enhanced user experiences.",
     image:
-      "https://media.istockphoto.com/id/1971796553/photo/young-couple-is-standing-at-mountain-top-with-great-view.webp?a=1&b=1&s=612x612&w=0&k=20&c=lK66beyTW4uKW0S0Sg9g6cj1BnJA2jqS41Gc7LBDVRI=",
+      "https://www.heleninwonderlust.co.uk/wp-content/uploads/2017/01/Shimba-Hills-1.jpg",
     tags: [
       "React",
       "Tailwind CSS",
@@ -171,8 +171,8 @@ export const projects = [
     githubUrl: "https://github.com/keelann95/Portfolio",
   },
   {
-    id: "keelanncorp-landing",
-    title: "KeelannCorp Landing Page",
+    id: "Zeus Corp-landing",
+    title: "Zeus Corp Landing Page",
     description:
       "A sleek, modern landing page for a personal company concept, built with React, TypeScript, and Bun. Features smooth animations, responsive layout, and strong visual branding.",
     image:
@@ -181,7 +181,7 @@ export const projects = [
     metrics: "Boosted user engagement by 65% in prototype user tests",
     categories: ["frontend", "UI/UX", "education","architecture","performance"],
     featured: false,
-    client: "KeelannCorp (Personal Project)",
+    client: "Zeus Corp (Personal Project)",
     date: "March 2025",
     duration: "1 month",
     role: "Frontend Developer / Designer",

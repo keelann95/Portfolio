@@ -36,8 +36,6 @@ const ProjectDetail: React.FC = () => {
     );
   }
 
- 
-
   return (
     <>
       {/* Project Header */}
@@ -157,17 +155,6 @@ const ProjectDetail: React.FC = () => {
                 technical challenges that required careful consideration of
                 architecture, performance optimization, and code quality.
               </p>
-
-              <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mt-12 mb-6">
-                Technical Challenges
-              </h2>
-
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">
-                  Performance Optimization
-                </h3>
-               
-              </div>
 
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">

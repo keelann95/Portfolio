@@ -37,14 +37,24 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         "PWA",
       ],
       metrics: " 100% offline-capable, built with encryption-first mindset",
-      categories: ["frontend", "privacy", "healthcare", "AI"],
+      categories: [
+        "frontend",
+        "privacy",
+        "healthcare",
+        "AI",
+        "PWA",
+        "performance",
+        "architecture",
+        "security",
+      ],
       featured: true,
       client: "Personal Project (In Progress)",
       date: "May 2025 – Present",
       duration: "Ongoing",
       role: "Frontend Engineer",
-      liveUrl: "https://your-vercel-url.vercel.app",
-      githubUrl: "https://github.com/yourusername/healthcare-app",
+      liveUrl:
+        "https://healthcare-manager-8yuc92evo-keelann95s-projects.vercel.app/", // replace with actual Vercel URL
+      githubUrl: "https://github.com/keelann95/healthcare-manager", // replace with actual repo
     },
     {
       id: "filmverse",
@@ -52,7 +62,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
       description:
         "A dynamic movie forum and discovery platform with secure authentication, protected routes, and interactive user experience.",
       image:
-        "https://images.pexels.com/photos/799131/pexels-photo-799131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://plus.unsplash.com/premium_photo-1696611126113-bff39c8e5a09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlsbSUyMHZlcnNlfGVufDB8fDB8fHww",
       tags: [
         "React",
         "Tailwind CSS",
@@ -63,14 +73,24 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
       ],
       metrics:
         "Reduced bounce rate by 35% with improved routing and authentication flow",
-      categories: ["fullstack", "ui/ux", "authentication"],
+      categories: [
+        "fullstack",
+        "ui/ux",
+        "authentication",
+        "security",
+        "performance",
+        "architecture",
+        "backend",
+        "frontend",
+        "data",
+      ],
       featured: true,
       client: "Personal Project",
       date: "Nov 2024 - Dec 2024",
       duration: "1 month",
       role: "Full Stack Developer",
-      liveUrl: "https://example.com/filmverse",
-      githubUrl: "https://github.com/yourusername/filmverse",
+      liveUrl: "https://film-verse-finale.vercel.app/",
+      githubUrl: "https://github.com/keelann95/Film-Verse",
     },
     {
       id: "white-pearl-tours",
@@ -78,7 +98,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
       description:
         "An immersive travel booking website tailored for luxury African tourism, featuring AI-driven trip customization and 3D-enhanced user experiences.",
       image:
-        "https://images.pexels.com/photos/1114656/pexels-photo-1114656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://www.heleninwonderlust.co.uk/wp-content/uploads/2017/01/Shimba-Hills-1.jpg",
       tags: [
         "React",
         "Tailwind CSS",
@@ -88,14 +108,21 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         "Node.js",
       ],
       metrics: "Increased client leads by 62%, reduced bounce rate by 38%",
-      categories: ["frontend", "ux", "ai-enhanced"],
+      categories: [
+        "frontend",
+        "UI/UX",
+        "education",
+        "architecture",
+        "performance",
+      ],
       featured: true,
       client: "White Pearl Tour & Travel",
       date: "April 2025 - present",
       duration: "ongoing",
       role: "Frontend Developer",
-      liveUrl: "https://whitepearltours.africa",
-      githubUrl: "https://github.com/yourusername/white-pearl-tours",
+      liveUrl:
+        "https://whitepearl-frontend-blvoqlm8b-keelann95s-projects.vercel.app/",
+      githubUrl: "https://github.com/keelann95/white-pearl-landing",
     },
   ];
 
