@@ -100,7 +100,7 @@ const About: React.FC = () => {
 
             <div className="flex flex-wrap gap-4 mb-8">
               <Button
-                href="https://mwaniki-curriculum-vitae.tiiny.site"
+                href="https://stephen-curriculum-vitae.tiiny.site"
                 variant="primary"
                 icon={<Download size={16} />}
               >
